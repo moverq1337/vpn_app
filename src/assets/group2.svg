@@ -1,20 +1,20 @@
-<svg width="864" height="867" viewBox="0 0 864 867" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_f_93_71)">
-<ellipse cx="481.831" cy="639.088" rx="195.914" ry="157.5" transform="rotate(38.806 481.831 639.088)" fill="#AB5453"/>
+<svg width="843" height="945" viewBox="0 0 843 945" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f_93_66)">
+<ellipse cx="364.99" cy="360.333" rx="166" ry="157.5" transform="rotate(28.2674 364.99 360.333)" fill="#583397"/>
 </g>
-<g filter="url(#filter1_f_93_71)">
-<ellipse cx="382.616" cy="374.512" rx="195.914" ry="157.5" transform="rotate(38.806 382.616 374.512)" fill="#583397"/>
+<g filter="url(#filter1_f_93_66)">
+<ellipse cx="478.228" cy="584.72" rx="166" ry="157.5" transform="rotate(28.2674 478.228 584.72)" fill="#AB5453"/>
 </g>
 <defs>
-<filter id="filter0_f_93_71" x="100.011" y="265.485" width="763.64" height="747.206" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_f_93_66" x="0.82373" y="0.859375" width="728.333" height="718.947" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_93_71"/>
+<feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_93_66"/>
 </filter>
-<filter id="filter1_f_93_71" x="0.795898" y="0.90918" width="763.64" height="747.206" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter1_f_93_66" x="114.061" y="225.246" width="728.333" height="718.947" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_93_71"/>
+<feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_93_66"/>
 </filter>
 </defs>
 </svg>
