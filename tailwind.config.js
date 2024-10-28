@@ -9,6 +9,9 @@ module.exports = {
 				regular: ['Poppins-Regular'],
 				semibold: ['Poppins-SemiBold'],
 			},
+			colors: {
+				'black-main': '#0B0B0B',
+			},
 		},
 	},
 	plugins: [],

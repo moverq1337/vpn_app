@@ -5,8 +5,10 @@ import Welcome from './components/welcome/welcome'
 function App() {
 	return (
 		<>
-			<Header />
-			<Welcome />
+			<div className='bg-black-main'>
+				<Header />
+				<Welcome />
+			</div>
 		</>
 	)
 }

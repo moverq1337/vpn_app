@@ -1,6 +1,6 @@
 export default function Header() {
 	return (
-		<div className='flex justify-between text-3xl font-bold p-4 bg-slate-900 text-white'>
+		<div className='flex justify-between text-xl font-regular p-2 text-white'>
 			<div>
 				<button>cashready.ru</button>
 			</div>
