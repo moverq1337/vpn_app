@@ -1,12 +1,13 @@
 import Typewriter from 'typewriter-effect'
-import group1 from '../../assets/group1.svg'
-import group2 from '../../assets/group2.svg'
-import group3 from '../../assets/group3.svg'
+import bg from '../../assets/bg.png'
 import Button from './buttonio'
 
 export default function Welcome() {
 	return (
-		<div className='welcome-container relative text-white h-screen overflow-hidden'>
+		<div
+			className='welcome-container relative text-white h-screen overflow-hidden '
+			style={{ backgroundImage: `url(${bg})` }}
+		>
 			{/* Основной контент */}
 			<div className='flex ml-[10%] items-center h-full relative z-10'>
 				<div className='flex flex-col gap-5'>
@@ -28,17 +29,6 @@ export default function Welcome() {
 					</div>
 					<Button></Button>
 				</div>
-			</div>
-
-			{/* Вращающиеся изображения */}
-			<div className='absolute top-[20rem] left-[-20rem]  animate-spin-slow scale-150'>
-				<img src={group1} alt='' className='w-full h-full object-contain' />
-			</div>
-			<div className='absolute top-[-25rem] right-[20rem]  animate-spin-slow scale-150'>
-				<img src={group2} alt='' className='w-full h-full object-contain' />
-			</div>
-			<div className='absolute bottom-[-25rem] left-[90rem] animate-spin-slow scale-150'>
-				<img src={group3} alt='' className='w-full h-full object-contain' />
 			</div>
 		</div>
 	)
