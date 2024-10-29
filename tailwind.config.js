@@ -3,7 +3,13 @@
 module.exports = {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				black: ['Poppins-Black'],
+				regular: ['Poppins-Regular'],
+				semibold: ['Poppins-SemiBold'],
+			},
+		},
 	},
 	plugins: [],
 }
