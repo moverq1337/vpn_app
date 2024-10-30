@@ -1,13 +1,9 @@
 import Typewriter from 'typewriter-effect'
-import bg from '../../assets/bg.png'
 import Button from './buttonio'
 
 export default function Welcome() {
 	return (
-		<div
-			className='welcome-container relative text-white h-screen overflow-hidden '
-			style={{ backgroundImage: `url(${bg})` }}
-		>
+		<div className='welcome-container relative text-white h-screen overflow-hidden '>
 			{/* Основной контент */}
 			<div className='flex ml-[10%] items-center h-full relative z-10'>
 				<div className='flex flex-col gap-5'>

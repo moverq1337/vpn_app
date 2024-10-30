@@ -21,3 +21,16 @@ body,
 #cursor-inner {
 	background-color: #0ff;
 }
+html,
+body,
+.App {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden; /* Если нужно скрыть прокрутку */
+}
+.bg-black-main {
+	background-color: transparent;
+	position: relative; /* Чтобы занимать только содержимое */
+	z-index: 1;
+}
