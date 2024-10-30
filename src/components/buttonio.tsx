@@ -1,16 +1,11 @@
-import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Button: React.FC = () => {
-	const [isModalOpen, setIsModalOpen] = useState(false)
-
-	const toggleModal = () => {
-		setIsModalOpen(!isModalOpen)
-	}
-
 	return (
 		<StyledWrapper>
-			<button onClick={toggleModal}>GET STARTED</button>
+			<button onClick={() => (window.location.href = '/login')}>
+				GET STARTED
+			</button>
 		</StyledWrapper>
 	)
 }

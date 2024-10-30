@@ -1,11 +1,26 @@
 import { motion } from 'framer-motion'
 import Typewriter from 'typewriter-effect'
-import Button from '../components/buttonio'
+import bg from '../../assets/bg.png'
+import Button from '../../components/buttonio'
 
 export default function Welcome() {
 	return (
-		<div className='welcome-container relative text-white h-screen overflow-hidden '>
-			<div className='flex ml-[10%] items-center h-full relative z-10 '>
+		<div
+			className='welcome-container relative text-white h-screen overflow-hidden'
+			style={{
+				backgroundImage: `url(${bg})`,
+				backgroundSize: 'cover',
+				backgroundPosition: 'center',
+				minHeight: '100vh',
+				width: '100%',
+			}}
+		>
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 5 }}
+				className='flex ml-[10%] items-center h-full relative z-10'
+			>
 				<div>
 					<motion.div
 						initial={{ y: -300, opacity: 0 }}
@@ -41,7 +56,7 @@ export default function Welcome() {
 						<Button />
 					</motion.div>
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	)
 }
