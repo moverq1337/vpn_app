@@ -1,27 +1,23 @@
-/* Медленное вращение по часовой стрелке */
-@keyframes spin-slow {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+body,
+.App {
+	cursor: none; /* Скрываем стандартный курсор */
 }
 
-/* Вращение против часовой стрелки */
-@keyframes spin-reverse {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(-360deg);
-	}
+#cursor-outer,
+#cursor-inner {
+	position: fixed;
+	pointer-events: none;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	transition: transform 0.2s ease, opacity 0.2s ease;
+	z-index: 10000;
 }
 
-.animate-spin-slow {
-	animation: spin-slow 20s linear infinite;
+#cursor-outer {
+	border-style: solid;
+	opacity: 0.3;
 }
 
-.animate-spin-reverse {
-	animation: spin-reverse 15s linear infinite;
+#cursor-inner {
+	background-color: #0ff;
 }
