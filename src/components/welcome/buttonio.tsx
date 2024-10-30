@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import Modal from '../modal/modal'
 
 const Button: React.FC = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false)
@@ -12,8 +11,6 @@ const Button: React.FC = () => {
 	return (
 		<StyledWrapper>
 			<button onClick={toggleModal}>GET STARTED</button>
-
-			<Modal isOpen={isModalOpen} onClose={toggleModal} />
 		</StyledWrapper>
 	)
 }
