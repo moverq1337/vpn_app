@@ -1,9 +1,19 @@
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import Modal from '../modal/modal'
 
-const Button = () => {
+const Button: React.FC = () => {
+	const [isModalOpen, setIsModalOpen] = useState(false)
+
+	const toggleModal = () => {
+		setIsModalOpen(!isModalOpen)
+	}
+
 	return (
 		<StyledWrapper>
-			<button>GET STARTED</button>
+			<button onClick={toggleModal}>GET STARTED</button>
+
+			<Modal isOpen={isModalOpen} onClose={toggleModal} />
 		</StyledWrapper>
 	)
 }
