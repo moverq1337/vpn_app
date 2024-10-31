@@ -1,52 +1,71 @@
+import { useState } from 'react'
+import bg from '../../assets/bg.png'
+import Button from '../../components/buttonio'
+
 export default function Registration() {
+	const [password, setPassword] = useState('')
+	const [confirmPassword, setConfirmPassword] = useState('')
+	const [error, setError] = useState('')
+
+	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault()
+
+		if (password !== confirmPassword) {
+			setError('Passwords do not match')
+		} else {
+			setError('')
+		}
+	}
+
+	const isButtonDisabled = password !== confirmPassword
+
 	return (
 		<div
-			className='Signin flex items-center justify-center'
+			className='Register flex items-center justify-center'
 			style={{
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
 				minHeight: '100vh',
 				width: '100%',
+				backgroundImage: `url(${bg})`,
 			}}
 		>
-			<div className='bg-white p-8 rounded shadow-lg'>
-				<h2 className='text-2xl font-bold mb-6'>Registration</h2>
-				<form>
-					<div className='mb-4'>
-						<label className='block text-gray-700 text-sm font-bold mb-2'>
-							Email
-						</label>
-						<input
-							type='email'
-							className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-						/>
-					</div>
-					<div className='mb-6'>
-						<label className='block text-gray-700 text-sm font-bold mb-2'>
-							Password
-						</label>
-						<input
-							type='password'
-							className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-						/>
-					</div>
-					<div className='flex items-center justify-between'>
-						<button
-							className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
-							type='submit'
-						>
-							Register
-						</button>
+			<div>
+				<div className='flex justify-center'>
+					<h2 className='text-2xl text-white font-black mb-6 '>REGISTER</h2>
+				</div>
+				<form
+					onSubmit={handleSubmit}
+					className='flex flex-col gap-12 bg-[#680cb7]/5 shadow-lg rounded-lg border border-white/20 backdrop-blur-md px-20 py-10'
+				>
+					<div>
+						<p className='text-white text-md font-regular'>USERNAME</p>
+						<input className='bg-transparent border-purple-200 border-2 rounded-lg px-2 py-2 text-white'></input>
 					</div>
 					<div>
-						<a
-							href='#'
-							className='inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800'
-							onClick={() => (window.location.href = '/login')}
-						>
-							already have account? let's sign in :D
-						</a>
+						<p className='text-white text-md font-regular'>E-MAIL</p>
+						<input className='bg-transparent border-purple-200 border-2 rounded-lg px-2 py-2 text-white'></input>
 					</div>
+					<div>
+						<p className='text-white text-md font-regular'>PASSWORD</p>
+						<input
+							className='bg-transparent border-purple-200 border-2 rounded-lg px-2 py-2 text-white'
+							type='password'
+							value={password}
+							onChange={e => setPassword(e.target.value)}
+						></input>
+					</div>
+					<div>
+						<p className='text-white text-md font-regular'>CONFIRM PASSWORD</p>
+						<input
+							className='bg-transparent border-purple-200 border-2 rounded-lg px-2 py-2 text-white'
+							type='password'
+							value={confirmPassword}
+							onChange={e => setConfirmPassword(e.target.value)}
+						></input>
+						{error && <p className='text-red-500 text-sm'>{error}</p>}
+					</div>
+					<Button text='REGISTER' navigateTo='/' disabled={isButtonDisabled} />
 				</form>
 			</div>
 		</div>

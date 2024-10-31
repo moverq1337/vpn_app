@@ -1,10 +1,19 @@
 import styled from 'styled-components'
 
-const Button: React.FC = () => {
+interface ButtonProps {
+	text: string
+	navigateTo: string
+	disabled?: boolean
+}
+
+const Button: React.FC<ButtonProps> = ({ text, navigateTo, disabled }) => {
 	return (
 		<StyledWrapper>
-			<button onClick={() => (window.location.href = '/login')}>
-				GET STARTED
+			<button
+				onClick={() => (window.location.href = navigateTo)}
+				disabled={disabled}
+			>
+				{text}
 			</button>
 		</StyledWrapper>
 	)
@@ -54,6 +63,11 @@ const StyledWrapper = styled.div`
 		transition: all 0.3s ease-in;
 		padding-right: 30px;
 		padding-left: 30px;
+	}
+
+	button:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
 	}
 `
 

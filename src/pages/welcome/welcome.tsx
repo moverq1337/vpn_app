@@ -53,7 +53,7 @@ export default function Welcome() {
 						transition={{ duration: 1 }}
 						className='mt-10'
 					>
-						<Button />
+						<Button text='letsgo' navigateTo='/login' />
 					</motion.div>
 				</div>
 			</motion.div>
