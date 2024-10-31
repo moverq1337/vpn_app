@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import Typewriter from 'typewriter-effect'
-import Button from './buttonio'
+import Button from '../components/buttonio'
 
 export default function Welcome() {
 	return (

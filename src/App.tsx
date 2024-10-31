@@ -1,36 +1,42 @@
 import { motion } from 'framer-motion'
-import React from 'react'
-import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import bg from './assets/bg.png'
 import AnimatedCursor from './components/cursor/cursor'
-import Welcome from './components/welcome/welcome'
+import SignIn from './signin/page'
+import Welcome from './welcome/page'
 
-const App: React.FC = () => {
+export default function App() {
 	return (
-		<div
-			className='App'
-			style={{
-				backgroundImage: `url(${bg})`,
-				backgroundSize: 'cover',
-				backgroundPosition: 'center',
-				minHeight: '100vh',
-				width: '100%',
-			}}
-		>
-			<motion.div
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 10 }}
-				transition={{ duration: 5 }}
-			>
-				{/* Добавляем кастомный курсор */}
-				<AnimatedCursor />
-				{/* Основной контент */}
-				<div className='bg-black-main'>
-					<Welcome />
-				</div>
-			</motion.div>
-		</div>
+		<BrowserRouter>
+			<AnimatedCursor />
+			<Routes>
+				<Route
+					path='/welcome'
+					element={
+						<div
+							className='App'
+							style={{
+								backgroundImage: `url(${bg})`,
+								backgroundSize: 'cover',
+								backgroundPosition: 'center',
+								minHeight: '100vh',
+								width: '100%',
+							}}
+						>
+							<motion.div
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								transition={{ duration: 5 }}
+							>
+								<div className='bg-black-main'>
+									<Welcome />
+								</div>
+							</motion.div>
+						</div>
+					}
+				/>
+				<Route path='/signin' element={<SignIn />} />{' '}
+			</Routes>
+		</BrowserRouter>
 	)
 }
-
-export default App
