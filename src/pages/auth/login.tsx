@@ -1,5 +1,23 @@
+import { motion } from 'framer-motion'
 import bg from '../../assets/bg.png'
 import Button from '../../components/buttonio'
+
+const containerVariants = {
+	hidden: { opacity: 0, scale: 0 },
+	visible: {
+		opacity: 1,
+		scale: 1,
+		transition: {
+			delayChildren: 0.4,
+			staggerChildren: 0.3,
+		},
+	},
+}
+
+const itemVariants = {
+	hidden: { y: 20, opacity: 0 },
+	visible: { y: 0, opacity: 1 },
+}
 
 export default function Login() {
 	return (
@@ -13,28 +31,45 @@ export default function Login() {
 				backgroundImage: `url(${bg})`,
 			}}
 		>
-			<div>
+			<motion.div
+				initial='hidden'
+				animate='visible'
+				variants={containerVariants}
+			>
 				<div className='flex justify-center'>
-					<h2 className='text-2xl text-white font-black mb-6 '>LOGIN</h2>
+					<motion.h2
+						className='text-2xl text-white font-black mb-6'
+						variants={itemVariants}
+					>
+						LOGIN
+					</motion.h2>
 				</div>
-				<form className='flex flex-col gap-12 bg-[#680cb7]/5 shadow-lg rounded-lg border border-white/20 backdrop-blur-md px-20 py-10'>
-					<div>
+				<motion.form
+					className='flex flex-col gap-12 bg-[#680cb7]/5 shadow-lg rounded-lg border border-white/20 backdrop-blur-md px-20 py-10'
+					variants={containerVariants}
+					initial='hidden'
+					animate='visible'
+				>
+					<motion.div variants={itemVariants}>
 						<p className='text-white text-md font-regular'>E-MAIL</p>
-						<input className='bg-transparent border-purple-200 border-2 rounded-lg px-2 py-2 text-white'></input>
-					</div>
-					<div>
+						<input className='bg-transparent border-purple-200 border-2 rounded-lg px-2 py-2 text-white' />
+					</motion.div>
+					<motion.div variants={itemVariants}>
 						<p className='text-white text-md font-regular'>PASSWORD</p>
 						<input
 							className='bg-transparent border-purple-200 border-2 rounded-lg px-2 py-2 text-white'
 							type='password'
-						></input>
-					</div>
-					<div className='flex flex-col gap-7'>
+						/>
+					</motion.div>
+					<motion.div className='flex flex-col gap-7' variants={itemVariants}>
 						<Button text='Login' navigateTo='/' />
+					</motion.div>
+
+					<motion.div className='flex flex-col gap-7' variants={itemVariants}>
 						<Button text='Register' navigateTo='/registration' />
-					</div>
-				</form>
-			</div>
+					</motion.div>
+				</motion.form>
+			</motion.div>
 		</div>
 	)
 }

@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 interface ButtonProps {
@@ -7,10 +8,15 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ text, navigateTo, disabled }) => {
+	const navigate = useNavigate()
+
 	return (
 		<StyledWrapper>
 			<button
-				onClick={() => (window.location.href = navigateTo)}
+				onClick={() => {
+					console.log('Button clicked:', text)
+					navigate(navigateTo)
+				}}
 				disabled={disabled}
 			>
 				{text}
